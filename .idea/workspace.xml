@@ -2,52 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0a1cbaf1-5cf4-4bdd-a5f6-9345009e44b1" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/__init__.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/application/__init__.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/application/admin.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/application/apps.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/application/migrations/__init__.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/application/models.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/application/tests.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/application/views.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/audit/__init__.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/audit/admin.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/audit/apps.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/audit/migrations/__init__.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/audit/models.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/audit/tests.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/audit/views.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/business/__init__.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/business/admin.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/business/apps.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/business/migrations/__init__.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/business/models.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/business/tests.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/business/views.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/power/__init__.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/power/admin.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/power/apps.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/power/migrations/__init__.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/power/models.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/power/tests.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/power/views.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/settings.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/source/__init__.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/source/admin.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/source/apps.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/source/migrations/__init__.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/source/models.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/source/tests.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/source/views.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/urls.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/wsgi.py" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/6cloud_cmdb/__init__.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/6cloud_cmdb/settings.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/6cloud_cmdb/urls.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/6cloud_cmdb/wsgi.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change beforePath="$PROJECT_DIR$/manage.py" afterPath="$PROJECT_DIR$/manage.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
