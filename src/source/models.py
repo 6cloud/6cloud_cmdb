@@ -196,7 +196,7 @@ class Application(BaseModel):
             ('get_host', ('获取主机信息')),
             ('add_host', ('添加主机')),
             ('change_host', ('修改主机信息')),
-            ('delete_host', ('删除主机')),
+            ('delete_host', ('删除应用')),
         )
         default_permissions = ()
 
