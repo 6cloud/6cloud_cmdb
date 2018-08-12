@@ -191,10 +191,6 @@ class Host(BaseModel):
     """
     Host model
     """
-    HOST_TYPE = (
-        ('server', 'Server'),
-        ('virtual server', 'Virtual Server'),
-    )
     HOST_STATUS = (
         (1, '使用中'),
         (2, '空闲中'),
@@ -206,13 +202,13 @@ class Host(BaseModel):
     hostname = models.CharField(max_length=64, unique=True, verbose_name='主机名')
     intranet_ipaddress = models.GenericIPAddressField(unique=True, verbose_name='内网IP')
     network_ipaddress = models.GenericIPAddressField(unique=True, blank=True, null=True, verbose_name='外网IP')
-    host_type = models.CharField(max_length=32, choices=HOST_TYPE, default='server', verbose_name='主机类型')
+    host_type = models.CharField(max_length=32, default='server', verbose_name='主机类型')
     macaddress = models.CharField(max_length=32, blank=True, null=True, verbose_name='Mac地址')
     sn = models.CharField(max_length=128, blank=True, null=True, verbose_name='SN号')
     manufacturer = models.CharField(max_length=64, blank=True, null=True, verbose_name='厂商')
-    Colony = models.ManyToManyField(Colony, related_name='host_groups', verbose_name='主机组')
+    Colony = models.ManyToManyField(Colony, related_name='host_groups', blank=True, null=True, verbose_name='主机组')
 
-    port = models.SmallIntegerField(default=22, blank=True, null=True, verbose_name='端口')
+    port = models.SmallIntegerField(default=22, verbose_name='端口')
     os_type = models.CharField(max_length=32, blank=True, null=True, verbose_name='系统类型')
     os_version = models.CharField(max_length=64, blank=True, null=True, verbose_name='系统版本')
 
@@ -221,7 +217,7 @@ class Host(BaseModel):
     disk = models.ForeignKey(Disk, blank=True, null=True, verbose_name='磁盘')
     nic = models.ForeignKey(NIC, blank=True, null=True, verbose_name='网卡')
 
-    systemuser = models.ForeignKey(SystemUser, blank=True, null=True, verbose_name='系统用户')
+    systemuser = models.ForeignKey(SystemUser, related_name='host_systemuser', verbose_name='系统用户')
 
     status = models.IntegerField(default=1, choices=HOST_STATUS, verbose_name='状态')
     description = models.TextField(max_length=512, blank=True, null=True, verbose_name='描述')
