@@ -39,8 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'application',
     'audit',
-    'business',
-    'power',
+    'commonsource',
+    'systemconfig',
     'source',
 ]
 
