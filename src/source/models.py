@@ -87,7 +87,7 @@ class SystemUser(BaseModel):
 
 class Colony(BaseModel):
     """
-    HostGroup model
+    Colony
     """
     name = models.CharField(max_length=64, unique=True, verbose_name='集群名')
     application = models.ForeignKey(Application, related_name='colony_application', verbose_name='所属应用')
@@ -218,6 +218,8 @@ class Host(BaseModel):
     nic = models.ForeignKey(NIC, blank=True, null=True, verbose_name='网卡')
 
     systemuser = models.ForeignKey(SystemUser, related_name='host_systemuser', verbose_name='系统用户')
+    colony = models.ManyToManyField(Colony, related_name='host_colony', verbose_name='所属集群')
+    application = models.ForeignKey(Application, related_name='host_application', verbose_name='所属应用')
 
     status = models.IntegerField(default=1, choices=HOST_STATUS, verbose_name='状态')
     description = models.TextField(max_length=512, blank=True, null=True, verbose_name='描述')
