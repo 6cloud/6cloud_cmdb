@@ -73,6 +73,7 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'src.wsgi.application'
+AUTH_USER_MODEL = 'systemconfig.User'
 
 
 # Database
