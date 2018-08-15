@@ -15,20 +15,6 @@ class Role(models.Model):
     update_time = models.DateTimeField(blank=True, null=True, verbose_name='修改时间')
 
 
-class UserGroup(models.Model):
-    """
-    UserGroup model
-    """
-    group_name = models.CharField(max_length=64, unique=True, verbose_name='组名')
-    group_key = models.CharField(max_length=32, unique=True, verbose_name='KEY')
-    leader = models.IntegerField(default=0, verbose_name='负责人')
-    desc = models.TextField(blank=True, null=True, verbose_name='描述')
-
-    create_time = models.DateTimeField(auto_now_add=True, verbose_name='创建时间')
-    update_time = models.DateTimeField(blank=True, null=True, verbose_name='修改时间')
-
-
-
 class User(AbstractUser):
     """
     User model
@@ -38,8 +24,7 @@ class User(AbstractUser):
     email = models.EmailField(max_length=64, unique=True, verbose_name='邮箱')
     password = models.CharField(max_length=128, verbose_name='密码')
     role = models.ManyToManyField(Role, related_name='user_roles', verbose_name='角色')
-    permission = models.ManyToManyField(Permission, related_name='user_perm', verbose_name='用户权限')
-    usergroup = models.ManyToManyField(UserGroup, related_name='user_groups', verbose_name='所属组')
+    permission = models.ManyToManyField(Permission, related_name='user_perm', blank=True, verbose_name='用户权限')
 
     create_time = models.DateTimeField(auto_now_add=True, verbose_name='创建时间')
     update_time = models.DateTimeField(blank=True, null=True, verbose_name='修改时间')

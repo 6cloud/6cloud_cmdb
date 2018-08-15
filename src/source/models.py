@@ -4,12 +4,12 @@ import uuid
 
 from django.db import models
 
-from systemconfig.models import User
+from src.systemconfig.models import User
 
 
 class BaseModel(models.Model):
     id = models.UUIDField(default=uuid.uuid4, primary_key=True, verbose_name='ID')
-    is_deleted = models.BooleanField(default=False, blank=True, null=True, verbose_name='是否被删除')
+    is_deleted = models.BooleanField(default=False, verbose_name='是否被删除')
     desc = models.TextField(blank=True, null=True, verbose_name='描述')
     create_time = models.DateTimeField(auto_now_add=True, verbose_name='创建时间')
     update_time = models.DateTimeField(auto_now=True, verbose_name='更新时间')
@@ -65,7 +65,7 @@ class Application(BaseModel):
 class SystemUser(BaseModel):
     name = models.CharField(max_length=128, verbose_name='名称')
     username = models.CharField(max_length=32, verbose_name='用户名')
-    password = models.CharField(256, blank=True, null=True, verbose_name='密码')
+    password = models.CharField(max_length=256, blank=True, null=True, verbose_name='密码')
     private_key = models.TextField(max_length=4096, blank=True, null=True, verbose_name='私钥')
     public_key = models.TextField(max_length=4096, blank=True, null=True, verbose_name='公钥')
 
@@ -206,8 +206,6 @@ class Host(BaseModel):
     macaddress = models.CharField(max_length=32, blank=True, null=True, verbose_name='Mac地址')
     sn = models.CharField(max_length=128, blank=True, null=True, verbose_name='SN号')
     manufacturer = models.CharField(max_length=64, blank=True, null=True, verbose_name='厂商')
-    Colony = models.ManyToManyField(Colony, related_name='host_groups', blank=True, null=True, verbose_name='主机组')
-
     port = models.SmallIntegerField(default=22, verbose_name='端口')
     os_type = models.CharField(max_length=32, blank=True, null=True, verbose_name='系统类型')
     os_version = models.CharField(max_length=64, blank=True, null=True, verbose_name='系统版本')
