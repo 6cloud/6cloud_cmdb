@@ -47,7 +47,7 @@ class Application(BaseModel):
     cs = models.ForeignKey(User, related_name='application_cs', blank=True, null=True, verbose_name='安全负责人')
 
     class Meta:
-        verbose_name = '业务'
+        verbose_name = '应用'
         verbose_name_plural = verbose_name
         permissions = (
             ('list_application', ('获取应用列表')),
@@ -64,7 +64,7 @@ class Application(BaseModel):
 
 class SystemUser(BaseModel):
     name = models.CharField(max_length=128, verbose_name='名称')
-    username = models.CharField(max_length=32, verbose_name='用户名')
+    username = models.CharField(max_length=32, blank=True, null=True, verbose_name='用户名')
     password = models.CharField(max_length=256, blank=True, null=True, verbose_name='密码')
     private_key = models.TextField(max_length=4096, blank=True, null=True, verbose_name='私钥')
     public_key = models.TextField(max_length=4096, blank=True, null=True, verbose_name='公钥')
@@ -93,14 +93,14 @@ class Colony(BaseModel):
     application = models.ForeignKey(Application, related_name='colony_application', verbose_name='所属应用')
 
     class Meta:
-        verbose_name = '主机组'
+        verbose_name = '集群'
         verbose_name_plural = verbose_name
         permissions = (
-            ('list_hostgroup', ('获取主机组列表')),
-            ('get_hostgroup', ('获取主机组信息')),
-            ('add_hostgroup', ('添加主机组')),
-            ('change_hostgroup', ('修改主机组信息')),
-            ('delete_hostgroup', ('删除主机组')),
+            ('list_hostgroup', ('获取集群列表')),
+            ('get_hostgroup', ('获取集群信息')),
+            ('add_hostgroup', ('添加集群')),
+            ('change_hostgroup', ('修改集群信息')),
+            ('delete_hostgroup', ('删除集群')),
         )
         default_permissions = ()
 
