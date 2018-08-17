@@ -19,7 +19,6 @@ class User(AbstractUser):
     """
     User model
     """
-    id = models.UUIDField(primary_key=True, auto_created=True, verbose_name='ID')
     username = models.CharField(max_length=64, unique=True, verbose_name='用户名')
     email = models.EmailField(max_length=64, unique=True, verbose_name='邮箱')
     password = models.CharField(max_length=128, verbose_name='密码')
