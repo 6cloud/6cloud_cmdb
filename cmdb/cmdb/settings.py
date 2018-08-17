@@ -25,7 +25,7 @@ SECRET_KEY = 'co8sn!g50hr0$@(s4q_vfkcvfvliu@qjkr#go9+sdq9)kwpm#r'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -37,6 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
+    'rest_framework_swagger',
+    # 'rest_framework_docs',
     'xadmin',
     'crispy_forms',
     'audit',

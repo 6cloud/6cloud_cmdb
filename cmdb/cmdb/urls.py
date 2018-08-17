@@ -13,10 +13,27 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
-from django.conf.urls import url
+from django.conf.urls import url, include
 # from django.contrib import admin
 import xadmin
+from rest_framework.schemas import get_schema_view
+from rest_framework_swagger.renderers import SwaggerUIRenderer, OpenAPIRenderer
+
+schema_view = get_schema_view(title='Users API', renderer_classes=[OpenAPIRenderer, SwaggerUIRenderer])
+
+from system.views import UserActionApi, RoleActionApi
+
+from rest_framework.routers import DefaultRouter
+
+router = DefaultRouter()
+
+router.register('user', UserActionApi)
+router.register('role', RoleActionApi)
+
 
 urlpatterns = [
+    url(r'^swagger/', schema_view, name='swagger'),
+    # url(r'^docs/', include('rest_framework_docs.urls')),
     url(r'^xadmin/', xadmin.site.urls),
+    url(r'^api/v1/', include(router.urls)),
 ]
