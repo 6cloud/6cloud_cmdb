@@ -2,7 +2,7 @@
 
 from rest_framework import serializers
 
-from source.models import Host
+from cmdb.source.models import Host
 
 
 class HostSerializer(serializers.HyperlinkedModelSerializer):

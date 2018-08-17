@@ -1,7 +1,7 @@
 from rest_framework import viewsets
 
-from source.serializers import HostSerializer
-from source.models import Host
+from cmdb.source import HostSerializer
+from cmdb.source.models import Host
 
 
 class HostView(viewsets.ModelViewSet):

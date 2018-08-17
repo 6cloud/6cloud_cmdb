@@ -4,7 +4,7 @@ import uuid
 
 from django.db import models
 
-from src.systemconfig.models import User
+from system.models import User
 
 
 class BaseModel(models.Model):
