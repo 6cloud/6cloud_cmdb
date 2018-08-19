@@ -140,7 +140,7 @@ class Cabinet(BaseModel):
     idc = models.ForeignKey(IDC, related_name='cabinet_idc', verbose_name='所属机房')
     address = models.CharField(max_length=128, unique=True, verbose_name='所在机房位置')
     unum = models.IntegerField(default=0, verbose_name='机柜U个数')
-    hosts = models.ManyToManyField('Host', related_name='cabinet_hosts', blank=True, null=True, verbose_name='主机')
+    hosts = models.ManyToManyField('Host', related_name='cabinet_hosts', blank=True, verbose_name='主机')
     status = models.IntegerField(default=0, verbose_name='状态')
 
     class Meta:
@@ -216,7 +216,7 @@ class Host(BaseModel):
     nic = models.ForeignKey(NIC, blank=True, null=True, verbose_name='网卡')
 
     systemuser = models.ForeignKey(SystemUser, related_name='host_systemuser', blank=True, null=True, verbose_name='系统用户')
-    colony = models.ManyToManyField(Colony, related_name='host_colony', blank=True, null=True, verbose_name='所属集群')
+    colony = models.ManyToManyField(Colony, related_name='host_colony', blank=True, verbose_name='所属集群')
     application = models.ForeignKey(Application, related_name='host_application', blank=True, null=True, verbose_name='所属应用')
 
     status = models.IntegerField(default=1, choices=HOST_STATUS, verbose_name='状态')
