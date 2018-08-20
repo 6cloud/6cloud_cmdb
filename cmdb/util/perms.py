@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
 
-from rest_framework.permissions import BasePermission, DjangoModelPermissions, DjangoObjectPermissions,SAFE_METHODS
+from rest_framework.permissions import BasePermission, DjangoModelPermissions, DjangoObjectPermissions
 
 from system.models import User, Role
 
 
-class CommonPermission(BasePermission):
+class CustomPermission(BasePermission):
 
     def has_object_permission(self, request, view, obj):
         return request.username == obj
@@ -18,7 +18,12 @@ class CommonPermission(BasePermission):
             return False
 
 
+class CustomDjangoModelPermission(DjangoModelPermissions):
+
+    def has_permission(self, request, view):
+        self.perms_map['GET'] = ['%(app_label)s.get_%(model_name)s']
+        super(CustomDjangoModelPermission, self).has_permission(request, view)
 
 
-
-
+class CustomDjangoObjectPermission(DjangoObjectPermissions):
+    pass

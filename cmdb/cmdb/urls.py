@@ -19,7 +19,7 @@ import xadmin
 from rest_framework.schemas import get_schema_view
 from rest_framework_swagger.renderers import SwaggerUIRenderer, OpenAPIRenderer
 
-schema_view = get_schema_view(title='Users API', renderer_classes=[OpenAPIRenderer, SwaggerUIRenderer])
+schema_view = get_schema_view(title='6Cloud_cmdb API', renderer_classes=[OpenAPIRenderer, SwaggerUIRenderer])
 
 from system.views import UserActionApi, RoleActionApi
 
